@@ -1,0 +1,65 @@
+.title {
+  text-align: center;
+  font-size: 50px;
+  color: #000000;
+  margin-top: 100px;
+}
+
+.subtitle {
+  text-align: center;
+  font-size: 30px;
+  color: #000000;
+  margin-top: 50px;
+}
+
+.buttons-container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.reg {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.reg_form {
+  margin: 0 auto;
+  width: 50%;
+}
+
+.form {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.btn {
+  margin-top: 20px;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+.container {
+  text-align: center;
+  margin-top: 50px;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #00BFFF;
+  color: white;
+  text-align: center;
+  padding: 10px;
+}

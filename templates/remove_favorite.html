@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Remove from Favorites</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Remove from Favorites</h1>
+            <p>Are you sure you want to remove this course from your favorites?</p>
+            <form action="{% url 'remove_favorite' course_id=course.id %}" method="post">
+                {% csrf_token %}
+                <button class="button is-danger" type="submit">Remove from Favorites</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

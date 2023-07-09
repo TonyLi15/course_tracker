@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Tracker</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="{% static 'style_base.css' %}">
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <ul class="navbar-menu">   
+                <li class="navbar-item"><a href="/mypage">Welcome, <strong>{{ request.user.username }}</strong></a></li> 
+                <li class="navbar-item"><a href="/index">Dashboard</a></li>
+                <li class="navbar-item"><a href="/search">Search for Course</a></li>
+                <li class="navbar-item"><a href="/create">Add a new Course</a></li>
+                <li class="navbar-item"><a href="/logout">Logout</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="section">
+        {% block content %}{% endblock %}
+    </section>
+
+
+    <footer class="footer">
+        <p>&copy; 2023 Haowen Li. All rights reserved. Student ID Number: 72076008</p>
+    </footer>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}{% block content %}
+   
+    <h2 class="title">{{course.title}}</h2>
+    <small>Posted at {{course.posted_date}}</small>
+    <p>Credit: {{ course.credit }}</p>
+    <p>Intro: {{ course.intro }}</p>
+    <p>Professor: {{ course.professor }}</p>
+    <p>Faculty: {{ course.faculty }}</p>
+    <a href="{% url 'edit_course' slug=course.slug %}">Edit Course</a>
+    <hr />
+
+    <!-- Comment Overview -->
+    <h2 class="subtitle">Comments</h2>
+
+    {% for comment in course.comments.all %}
+        <div class="box">
+            <article class="media">
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <strong>{{comment.name}}
+                                <small>{{comment.posted_date}}</small>
+                            </strong>
+                            <br />
+                            <strong>Score: {{comment.score}}</strong>
+                            <br />
+                            Content: {{comment.body}}
+                        </p>
+                        <a href="{% url 'edit_comment' comment_id=comment.id %}">Edit Comment</a>
+                    </div>
+                </div>
+            </article>
+        </div>
+    {% empty %}
+        <div class="notification">
+            <p>No Comments yet</p>
+        </div>
+    <hr />
+    {% endfor %}
+    
+    <!-- Add Comment Form -->
+    <h2 class="subtitle">Add Comment...</h2>
+
+    <form action='.' method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <div class="field">
+            <div class="control">
+                <button class="button is-danger">Send</button>
+            </div>
+        </div>
+    </form>
+
+    <!-- Back to index page-->
+    <section class="section">
+        <div class="container">
+            <a href="{% url 'index' %}" class="button is-primary">Back to Dashboard</a>
+        </div>
+    
+{% endblock %}

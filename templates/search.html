@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1 class="title">Search Courses</h1>
+
+    <form action="{% url 'search' %}" method="GET">
+        <input type="text" name="q" placeholder="Search..." >
+        <button type="submit">Search</button>
+    </form>
+
+    <hr/>
+    {% if results %}
+        <ul>
+            {% for course in results %}
+                <li><a href="{% url 'course_detail' course.slug %}">{{ course.title }}</a></li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p><h2 class="subtitle">No results found.</h2></p>
+    {% endif %}
+{% endblock %}

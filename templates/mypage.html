@@ -1,0 +1,30 @@
+{% extends 'base.html' %}{% block content %}
+<section class="section">
+        <div class="container">
+            <h1 class="title">My Courses</h1>
+            {% if favorite_courses %}
+                {% for course in favorite_courses %}
+                    <div class="post block">
+                        <h2 class="subtitle">{{ course.title }}</h2>
+                        <p>Credit: {{ course.credit }}</p>
+                        <p>Intro: {{ course.intro }}</p>
+                        <p>Professor: {{ course.professor }}</p>
+                        <p>Faculty: {{ course.faculty }}</p>
+                        <p>Average Score:<strong>{{course.average_score}}</strong></p>
+                        <p><a href="{% url 'course_detail' course.slug %}">Detail</a></p>
+                        <p><a href="{% url 'remove_favorite' course.slug %}">Remove from Favorites</a></p>
+                        <hr />
+                    </div>
+                
+                {% empty %}
+                    <p>No favorite courses yet.</p>
+                {% endfor %}
+                <!-- Display total credit -->
+                <p>Total Number of Courses: <strong>{{ favorite_courses|length }}</strong></p>
+                <p>Total Credits: <strong>{{total_credits}}</strong>/20</p>
+            {% else %}
+                <p>No favorite courses yet.</p>
+            {% endif %}
+        </div>
+    </section>
+{% endblock %}

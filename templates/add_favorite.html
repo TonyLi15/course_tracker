@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add to Favorites</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+    <section class="section">
+        <div class="container">
+            <h1 class="title">Add to Favorites</h1>
+            <p>Are you sure you want to add this course to your favorites?</p>
+            <form action="{% url 'add_favorite' course_id=course.id %}" method="post">
+                {% csrf_token %}
+                <button class="button is-danger" type="submit">Add to Favorites</button>
+            </form>
+        </div>
+    </section>
+</body>
+</html>

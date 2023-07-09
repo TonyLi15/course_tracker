@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<title>login</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+<link rel="stylesheet" href="{% static 'style.css' %}"">
+
+<style>
+   .title {
+     text-align: center;
+     font-size: 50px;
+     color: #000000;
+     margin-top: 100px;
+   }
+   
+   .subtitle {
+     text-align: center;
+     font-size: 30px;
+     color: #000000;
+     margin-top: 50px;
+   }
+   
+   .buttons-container {
+     text-align: center;
+     margin-top: 50px;
+   }
+   
+   .reg {
+     text-align: center;
+     margin-top: 50px;
+   }
+   
+   .reg_form {
+     margin: 0 auto;
+     width: 50%;
+   }
+   
+   .btn {
+     margin-top: 20px;
+     margin-left: 20px;
+     margin-right: 20px;
+     margin-bottom: 20px;
+   }
+   
+   .container {
+     text-align: center;
+     margin-top: 50px;
+   }
+   </style>
+</head>
+<body>
+<h1 class="title">Login</h1>
+
+<div class="reg">
+  <form method="post" action="{% url 'Login' %}">
+    {% csrf_token %}
+
+
+    <table class="reg_form">
+    <tr>
+    <td><label for="userid">User ID:</label></td>
+    <td><input type="text" name="userid"></td>
+      </tr>
+      <tr>
+    <td><label for="password">Password：</label></td>
+    <td><input type="password" name="password"></td>
+    </tr>
+    </table>
+
+    <input type="submit" class="button is-primary" value="Login">
+ </form>
+</div>
+   <p><h2 class="subtitle">If you don't have an account：</h2> </p>
+  
+   <div class="container">
+      <a href="{% url 'register' %}" class="button is-danger">Register a new account</a>
+  </div>
+</div>
+
+</body>
+</html>

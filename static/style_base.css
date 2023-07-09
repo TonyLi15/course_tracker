@@ -1,0 +1,36 @@
+.navbar {
+    background-color: #00BFFF;
+}
+
+.navbar-item {
+    color: white;
+}
+
+.navbar-item:hover {
+    color: black;
+}
+
+.navbar-menu {
+    padding-left: 100px;
+}
+
+.navbar-item {
+    padding-left: 20px;
+}
+
+.navbar-item:hover {
+    background-color: #00BFFF;
+    color: black;
+}
+
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: #00BFFF;
+    color: white;
+    text-align: center;
+    padding: 10px;
+}
